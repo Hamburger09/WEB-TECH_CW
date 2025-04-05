@@ -1,8 +1,48 @@
 [
-  "The Great Gatsby",
-  "F. Scott Fitzgerald",
-  "9780743273565",
-  10.99,
-  "Fiction",
-  "A novel set in the Jazz Age that tells the story of Jay Gatsby's unrequited love for Daisy Buchanan."
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
+    "genre": "Fiction",
+    "published": 1925,
+    "summary": "A story about the American dream and the disillusionment that comes with it.",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "published": 1925,
+    "summary": "A story about the American dream and the disillusionment that comes with it.",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "published": 1925,
+    "summary": "A story about the American dream and the disillusionment that comes with it.",
+    "rating": 4.5
+  },
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "published": 1925,
+    "summary": "A story about the American dream and the disillusionment that comes with it.",
+    "rating": 4.5
+  },
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "published": 1925,
+    "summary": "A story about the American dream and the disillusionment that comes with it.",
+    "rating": 4.5
+  }
 ]

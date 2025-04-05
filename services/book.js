@@ -1,39 +1,46 @@
 const path = require("path");
 const fs = require("fs");
 
-const books = path.join(__dirname, "../data/books.json");
+if (!global.books) {
+  global.books = path.join(__dirname, "../data", "books.json");
+}
+
+const books = require(global.books);
 
 const bookService = {
   // Function to get all books
-  getBooks: () => {
-    return new Promise((resolve, reject) => {
-      fs.readFile(books, "utf8", (err, data) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(JSON.parse(data));
-        }
-      });
-    });
+  getBooks: (req, res) => {
+    return books;
   },
   // Function to get a book by ID
-  getBookById: (id) => {
-    return new Promise((resolve, reject) => {
-      fs.readFile(books, "utf8", (err, data) => {
-        if (err) {
-          reject(err);
-        } else {
-          const books = JSON.parse(data);
-          const book = books.find((book) => book.id === id);
-          if (book) {
-            resolve(book);
-          } else {
-            reject(new Error("Book not found"));
-          }
-        }
-      });
-    });
+  getBookById: (req, res) => {
+    const bookId = req.params.id;
+    const book = books.find((book) => book.id === bookId);
+    if (!book) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+    return book;
   },
+
+  // Function to add a new book
+  addBook: (req, res) => {
+    const newBook = req.body;
+    newBook.id = generateId(10);
+    books.push(newBook);
+    fs.writeFileSync(global.books, JSON.stringify(books, null, 2));
+    return newBook;
+  },
+};
+
+const generateId = (length) => {
+  let result = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 };
 
 module.exports = bookService;

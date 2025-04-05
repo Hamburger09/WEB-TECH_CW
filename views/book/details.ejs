@@ -1,0 +1,30 @@
+<%- include("../head.ejs") %>
+<div class="ui container text segment" id="mainindexpage">
+  <div class="ui huge header center aligned">sdfsdf</div>
+  <div class="meta">
+    <span>Rating: </span>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui divider"></div>
+  <div class="ui divided items">
+    <div class="item">
+      <div class="content" style="text-align: justify">
+        <div class="header">Summary:</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content" style="text-align: justify">
+        <div class="header">Book Review:</div>
+      </div>
+    </div>
+  </div>
+  <a href="/books//edit" class="ui yellow basic button">Edit Book Review</a>
+  <form
+    id="delete"
+    method="POST"
+    action="/books/?_method=DELETE"
+    style="display: inline"
+  >
+    <button class="ui red basic button">Delete</button>
+  </form>
+</div>
