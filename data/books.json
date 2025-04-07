@@ -1,26 +1,18 @@
 [
     {
-        "id": "sdfsdf",
-        "title": "The Great Gatsby",
-        "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
-        "summary": "A story about the American dream and the disillusionment that comes with it.",
+        "title": "Rich Dad Poor Dad",
+        "image": "https://m.media-amazon.com/images/I/81BE7eeKzAL._SL1500_.jpg",
+        "summary": "About a rich and a poor dad.",
+        "review": "This is a great book. Recommend everyone!",
         "rating": 4,
-        "review": "A classic novel that explores themes of wealth, love, and the American dream. The characters are well-developed and the writing is beautiful. Highly recommend!"
+        "id": "OWF9WFeyZf"
     },
     {
-        "id": "sdfsdfsdfsdfsdffs",
-        "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
-        "title": "The Great Gatsby",
-        "summary": "A story about the American dream and the disillusionment that comes with it.",
-        "review":"It is an awful god terrible movie...",
-        "rating": 5
-    },
-    {
-        "title": "Dilshod else",
-        "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
-        "summary": "A story about the American dream and the disillusionment that comes with it.",
-        "rating": 5,
-        "review": "It is an awful god terrible movie...",
-        "id": "9Ge5WvPHMW"
+        "title": "Deep work ",
+        "image": "https://m.media-amazon.com/images/I/81JJ7fyyKyS.jpg",
+        "summary": "A book about deep work",
+        "review": "This is a great book. Recommend.",
+        "rating": 4,
+        "id": "ouD5nZPraR"
     }
 ]

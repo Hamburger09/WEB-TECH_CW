@@ -2,25 +2,25 @@
 <div class="container my-5">
     <h1 class="display-5 mb-4">Add a New Book Review!</h1>
   
-    <form action="/books" method="POST">
+    <form >
       <div class="mb-3">
         <label for="bookTitle" class="form-label">Book Title</label>
-        <input type="text" name="book[title]" id="bookTitle" class="form-control" placeholder="Book Title" required />
+        <input type="text" name="book[title]" id="bookTitle" class="form-control" placeholder="Book Title"  />
       </div>
   
       <div class="mb-3">
         <label for="bookImage" class="form-label">URL of Book Cover Image</label>
-        <input type="text" name="book[image]" id="bookImage" class="form-control" placeholder="URL of Book Cover image" required />
+        <input type="text" name="book[image]" id="bookImage" class="form-control" placeholder="URL of Book Cover image"  />
       </div>
   
       <div class="mb-3">
-        <label for="bookDescription" class="form-label">Book Summary</label>
-        <textarea name="book[description]" id="bookDescription" rows="3" class="form-control" required></textarea>
+        <label for="bookSummary" class="form-label">Book Summary</label>
+        <textarea name="book[description]" id="bookSummary" rows="3" class="form-control" ></textarea>
       </div>
   
       <div class="mb-3">
         <label for="bookReview" class="form-label">Book Review</label>
-        <textarea name="book[review]" id="bookReview" rows="4" class="form-control" required></textarea>
+        <textarea name="book[review]" id="bookReview" rows="4" class="form-control" ></textarea>
       </div>
   
       <div class="mb-3">
@@ -50,4 +50,71 @@
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
+<script>
+
+  const bookId = window.location
+  console.log(bookId)
+
+  // Grab the form and radio buttons
+  const form = document.querySelector('form');
+  const radioButtons = document.querySelectorAll('input[name="book[rating]"]');
+
+  // Function to get the selected rating
+  function getSelectedRating() {
+    let selectedRating = null;
+    radioButtons.forEach(radio => {
+      if (radio.checked) {
+        selectedRating = radio.value; // This will be the value of the selected radio button (1, 2, 3, 4, or 5)
+      }
+    });
+    return Number(selectedRating);
+  }
+
+
+
+form.addEventListener('submit', function () {
+    event.preventDefault();
+    // Get values from the form
+    const bookTitle = document.getElementById("bookTitle").value;
+    const bookImage = document.getElementById("bookImage").value;
+    const bookSummary = document.getElementById("bookSummary").value;
+    const bookReview = document.getElementById("bookReview").value;
+    const bookRating = getSelectedRating();
+
+    // If no rating was selected, alert the user
+    if (!bookRating) {
+      alert('Please select a rating!');
+      return;
+    }
+
+    // Prepare the data for the API call
+    const data = {
+      title: bookTitle,
+      image: bookImage,
+      summary: bookSummary,
+      review: bookReview,
+      rating: bookRating
+    };
+
+    fetch("/api/book/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Book added successfully!");
+          window.location.href = "/";
+        } else {
+          alert("Error adding book. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      });
+    })
+</script>
   

@@ -45,12 +45,10 @@
                 <button class="btn btn-warning">Edit Book Review</button>
                  </a>
                 <form
-                  id="delete"
-                  method="POST"
-                  action="/books/?_method=DELETE"
+                  id="delete-form"
                   style="display: inline"
                 >
-                  <button class="btn btn-danger">Delete</button>
+                  <button class="btn btn-danger" type="submit" id="delete-button">Delete</button>
                 </form>
               </div>
               
@@ -58,5 +56,41 @@
             </div>
           </div>
         `;
+
+
+      const deleteForm = document.getElementById("delete-form");
+      deleteForm.addEventListener("submit", function() {
+        event.preventDefault();
+        confirm("Are you sure you want to delete the book review");
+
+
+        if(!confirm) {
+          return;
+        }
+        fetch(`/api/book/delete/${bookId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Book review deleted successfully!");
+            window.location.href = "/book";
+          } else {
+            alert("Failed to delete the book review.");
+          }
+        })
+      
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      })
     });
+
+    
+
+ 
+  
+  
 </script>

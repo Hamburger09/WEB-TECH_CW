@@ -31,11 +31,11 @@
               }" class="card-img-top img-fluid" style="max-height: 300px; object-fit: cover;"/>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/books/${book.id}" class="nav-link">${book.title}</a>
+                  <a href="/book/details/${book.id}" class="nav-link">${book.title}</a>
                 </h4>
                 <div class="meta">
                   <h5>Rating: 
-                    ${[...Array(book.rating)]
+                    ${[...Array(Number(book.rating))]
                       .map(() => '<img src="/icons/star-fill.svg" alt="" />')
                       .join("")}
                     ${[...Array(5 - book.rating)]
@@ -48,7 +48,7 @@
                   <p>${book.summary}...</p>
                 </div>
                 <div class="extra">
-                  <a href="/book/${
+                  <a href="/book/details/${
                     book.id
                   }" class="btn btn-primary">Book Review</a>
                 </div>

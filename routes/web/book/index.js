@@ -6,10 +6,10 @@ const bookController = require("../../../controllers/web/home/index.js");
 router.get("/", bookController.index);
 
 // Route to get a specific book by ID
-router.get("/:id", bookController.details);
+router.get("/details/:id", bookController.details);
 
 // Route to add a new book
-router.get("/create", bookController.add);
+router.get("/add", bookController.add);
 
 // Route to edit a book by ID
 router.get("/edit/:id", bookController.edit);

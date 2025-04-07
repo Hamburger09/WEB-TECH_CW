@@ -17,8 +17,6 @@ router.post("/add", bookController.addBook);
 
 // Route to delete a book by ID
 // This route handles DELETE requests to delete a specific book by its ID
-router.delete("/:id", (req, res) => {
-  bookController.deleteBook(req, res);
-});
+router.delete("/delete/:id",bookController.deleteBook);
 
 module.exports = router;
