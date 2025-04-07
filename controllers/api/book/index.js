@@ -60,6 +60,29 @@ const bookController = {
     }
   },
 
+  // Function to update a book by ID
+  updateBook: async (req, res) => {
+    // Call the book service to update a book by ID
+    try {
+      const updatedBook = await bookService.updateBook(req, res);
+      // Check if the book was updated successfully
+      if (!updatedBook) {
+        return res.status(404).json({
+          message: "Book not found",
+        });
+      }
+      res.status(200).json({
+        message: "Book updated successfully",
+        book: updatedBook,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: "Error updating book",
+        error: error.message,
+      });
+    }
+  },
+
   // Function to delete a book by ID
   deleteBook: async (req, res) => {
     // Call the book service to delete a book by ID

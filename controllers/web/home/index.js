@@ -19,7 +19,9 @@ const homeController = {
   },
   add: async (req, res) => {
     try {
-      res.render("book/add_edit");
+      res.render("book/add_edit", {
+        mode: "add"
+      });
     } catch (error) {
       res.status(500).json({
         error: error.message,
@@ -28,7 +30,9 @@ const homeController = {
   },
   edit: async (req, res) => {
     try {
-      res.render("book/add_edit");
+      res.render("book/add_edit", {
+        mode: "edit"
+      });
     } catch (error) {
       res.status(500).json({
         error: error.message,

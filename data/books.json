@@ -1,18 +1,26 @@
 [
-    {
-        "title": "Rich Dad Poor Dad",
-        "image": "https://m.media-amazon.com/images/I/81BE7eeKzAL._SL1500_.jpg",
-        "summary": "About a rich and a poor dad.",
-        "review": "This is a great book. Recommend everyone!",
-        "rating": 4,
-        "id": "OWF9WFeyZf"
-    },
-    {
-        "title": "Deep work ",
-        "image": "https://m.media-amazon.com/images/I/81JJ7fyyKyS.jpg",
-        "summary": "A book about deep work",
-        "review": "This is a great book. Recommend.",
-        "rating": 4,
-        "id": "ouD5nZPraR"
-    }
+  {
+    "title": "Deep Work1",
+    "image": "https://m.media-amazon.com/images/I/81JJ7fyyKyS._AC_UF1000,1000_QL80_.jpg",
+    "summary": "Great book",
+    "review": "This is a great book. Recommend.",
+    "rating": 5,
+    "id": "fuoDAMEETx"
+  },
+  {
+    "title": "Rich Dad Poor",
+    "image": "https://m.media-amazon.com/images/I/81BE7eeKzAL._SL1500_.jpg",
+    "summary": "Rich dad poor dad",
+    "review": "This is a great book",
+    "rating": 5,
+    "id": "ZGiEmSOq8h"
+  },
+  {
+    "title": "Harry Potter",
+    "image": "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale,dpr_1.5/jackets/9781408855652.jpg",
+    "summary": "A book about Harry Potter",
+    "review": "This book is glorious. Recommend.",
+    "rating": 4,
+    "id": "rKAdqr7arD"
+  }
 ]

@@ -15,6 +15,10 @@ router.get("/:id", bookController.getBookById);
 // This route handles POST requests to add a new book
 router.post("/add", bookController.addBook);
 
+// Route to update a book by ID
+// This route handles PUT requests to update a specific book by its ID
+router.put("/update/:id", bookController.updateBook);
+
 // Route to delete a book by ID
 // This route handles DELETE requests to delete a specific book by its ID
 router.delete("/delete/:id",bookController.deleteBook);

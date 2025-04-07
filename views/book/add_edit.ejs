@@ -1,120 +1,245 @@
 <%- include('../head.ejs') %>
 <div class="container my-5">
-    <h1 class="display-5 mb-4">Add a New Book Review!</h1>
-  
-    <form >
-      <div class="mb-3">
-        <label for="bookTitle" class="form-label">Book Title</label>
-        <input type="text" name="book[title]" id="bookTitle" class="form-control" placeholder="Book Title"  />
+  <h1 class="display-5 mb-4">
+    <%= mode === 'edit' ? 'Edit Book Review' : 'Add a New Book Review' %>
+  </h1>
+
+  <form>
+    <div class="mb-3">
+      <label for="bookTitle" class="form-label">Book Title</label>
+      <input
+        type="text"
+        name="book[title]"
+        id="bookTitle"
+        class="form-control"
+        placeholder="Book Title"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="bookImage" class="form-label">URL of Book Cover Image</label>
+      <input
+        type="text"
+        name="book[image]"
+        id="bookImage"
+        class="form-control"
+        placeholder="URL of Book Cover image"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="bookSummary" class="form-label">Book Summary</label>
+      <textarea
+        name="book[description]"
+        id="bookSummary"
+        rows="3"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="bookReview" class="form-label">Book Review</label>
+      <textarea
+        name="book[review]"
+        id="bookReview"
+        rows="4"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label d-block">Rating</label>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="book[rating]"
+          id="rating1"
+          value="1"
+        />
+        <label class="form-check-label" for="rating1">⭐</label>
       </div>
-  
-      <div class="mb-3">
-        <label for="bookImage" class="form-label">URL of Book Cover Image</label>
-        <input type="text" name="book[image]" id="bookImage" class="form-control" placeholder="URL of Book Cover image"  />
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="book[rating]"
+          id="rating2"
+          value="2"
+        />
+        <label class="form-check-label" for="rating2">⭐⭐</label>
       </div>
-  
-      <div class="mb-3">
-        <label for="bookSummary" class="form-label">Book Summary</label>
-        <textarea name="book[description]" id="bookSummary" rows="3" class="form-control" ></textarea>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="book[rating]"
+          id="rating3"
+          value="3"
+        />
+        <label class="form-check-label" for="rating3">⭐⭐⭐</label>
       </div>
-  
-      <div class="mb-3">
-        <label for="bookReview" class="form-label">Book Review</label>
-        <textarea name="book[review]" id="bookReview" rows="4" class="form-control" ></textarea>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="book[rating]"
+          id="rating4"
+          value="4"
+        />
+        <label class="form-check-label" for="rating4">⭐⭐⭐⭐</label>
       </div>
-  
-      <div class="mb-3">
-        <label class="form-label d-block">Rating</label>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="book[rating]" id="rating1" value="1" />
-          <label class="form-check-label" for="rating1">⭐</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="book[rating]" id="rating2" value="2" />
-          <label class="form-check-label" for="rating2">⭐⭐</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="book[rating]" id="rating3" value="3" />
-          <label class="form-check-label" for="rating3">⭐⭐⭐</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="book[rating]" id="rating4" value="4" />
-          <label class="form-check-label" for="rating4">⭐⭐⭐⭐</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="book[rating]" id="rating5" value="5" />
-          <label class="form-check-label" for="rating5">⭐⭐⭐⭐⭐</label>
-        </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="book[rating]"
+          id="rating5"
+          value="5"
+        />
+        <label class="form-check-label" for="rating5">⭐⭐⭐⭐⭐</label>
       </div>
-  
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-  </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
 <script>
 
-  const bookId = window.location
-  console.log(bookId)
+      // Grab the form and radio buttons
+      const form = document.querySelector('form');
+      const radioButtons = document.querySelectorAll('input[name="book[rating]"]');
 
-  // Grab the form and radio buttons
-  const form = document.querySelector('form');
-  const radioButtons = document.querySelectorAll('input[name="book[rating]"]');
-
-  // Function to get the selected rating
+      // Check if the form is in edit mode
+      const isEditMode = <%= mode === 'edit' %>;
+        // Function to get the selected rating
   function getSelectedRating() {
-    let selectedRating = null;
-    radioButtons.forEach(radio => {
-      if (radio.checked) {
-        selectedRating = radio.value; // This will be the value of the selected radio button (1, 2, 3, 4, or 5)
+        let selectedRating = null;
+        radioButtons.forEach(radio => {
+          if (radio.checked) {
+            selectedRating = radio.value; // This will be the value of the selected radio button (1, 2, 3, 4, or 5)
+          }
+        });
+        return Number(selectedRating);
       }
-    });
-    return Number(selectedRating);
-  }
 
+      if (isEditMode) {
+        const bookId = window.location.pathname.split("/").pop(); // Get the book ID from the URL
+        fetch(`/api/book/${bookId}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then(({ book }) => {
+            // Populate the form fields with the book data
+            document.getElementById("bookTitle").value = book.title;
+            document.getElementById("bookImage").value = book.image;
+            document.getElementById("bookSummary").value = book.summary;
+            document.getElementById("bookReview").value = book.review;
 
+            // Set the selected radio button based on the book's rating
+            const selectedRating = book.rating;
+            radioButtons.forEach((radio) => {
+              if (radio.value == selectedRating) {
+                radio.checked = true;
+              }
+            });
+          })
+          .catch((error) => console.error("Error fetching book:", error));
 
-form.addEventListener('submit', function () {
-    event.preventDefault();
-    // Get values from the form
-    const bookTitle = document.getElementById("bookTitle").value;
-    const bookImage = document.getElementById("bookImage").value;
-    const bookSummary = document.getElementById("bookSummary").value;
-    const bookReview = document.getElementById("bookReview").value;
-    const bookRating = getSelectedRating();
+        // Handle form submission for editing a book
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
 
-    // If no rating was selected, alert the user
-    if (!bookRating) {
-      alert('Please select a rating!');
-      return;
-    }
+          // Get values from the form
+          const bookTitle = document.getElementById("bookTitle").value;
+          const bookImage = document.getElementById("bookImage").value;
+          const bookSummary = document.getElementById("bookSummary").value;
+          const bookReview = document.getElementById("bookReview").value;
+          const bookRating = getSelectedRating();
 
-    // Prepare the data for the API call
-    const data = {
-      title: bookTitle,
-      image: bookImage,
-      summary: bookSummary,
-      review: bookReview,
-      rating: bookRating
-    };
+          // If no rating was selected, alert the user
+          if (!bookRating) {
+            alert('Please select a rating!');
+            return;
+          }
 
-    fetch("/api/book/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert("Book added successfully!");
-          window.location.href = "/";
-        } else {
-          alert("Error adding book. Please try again.");
+          // Prepare the data for the API call
+          const data = {
+            title: bookTitle,
+            image: bookImage,
+            summary: bookSummary,
+            review: bookReview,
+            rating: bookRating
+          };
+
+          fetch(`/api/book/update/${bookId}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => {
+              if (response.ok) {
+                alert("Book updated successfully!");
+                window.location.href = "/";
+              } else {
+                alert("Error updating book. Please try again.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("An error occurred. Please try again.");
+            });
+        });
+      } else if(!isEditMode) {
+        // Handle form submission for adding a new book
+    form.addEventListener('submit', function () {
+        event.preventDefault();
+        // Get values from the form
+        const bookTitle = document.getElementById("bookTitle").value;
+        const bookImage = document.getElementById("bookImage").value;
+        const bookSummary = document.getElementById("bookSummary").value;
+        const bookReview = document.getElementById("bookReview").value;
+        const bookRating = getSelectedRating();
+
+        // If no rating was selected, alert the user
+        if (!bookRating) {
+          alert('Please select a rating!');
+          return;
         }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-      });
-    })
+
+        // Prepare the data for the API call
+        const data = {
+          title: bookTitle,
+          image: bookImage,
+          summary: bookSummary,
+          review: bookReview,
+          rating: bookRating
+        };
+
+        fetch("/api/book/add", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            if (response.ok) {
+              alert("Book added successfully!");
+              window.location.href = "/";
+            } else {
+              alert("Error adding book. Please try again.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again.");
+          });
+        })
+      }
 </script>
-  

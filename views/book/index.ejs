@@ -37,8 +37,7 @@
                   <h5>Rating: 
                     ${[...Array(Number(book.rating))]
                       .map(() => '<img src="/icons/star-fill.svg" alt="" />')
-                      .join("")}
-                    ${[...Array(5 - book.rating)]
+                      .join("")}${[...Array(5 - book.rating)]
                       .map(() => '<img src="/icons/star-outline.svg" alt="" />')
                       .join("")}
                   </h5>

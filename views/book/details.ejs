@@ -18,14 +18,14 @@
               <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <img src="${
                   book.image
-                }" class="card-img-top img-fluid" style="max-height: 400px; object-fit: contain;"/>
+                }" class="card-img-top img-fluid" style=""/>
               </div>
 
               <div class="col-12 col-sm-6 col-md-8 col-lg-9">
                 <span>Rating: ${[...Array(book.rating)]
                   .map(() => '<img src="/icons/star-fill.svg" alt="" />')
                   .join("")}${[...Array(5 - book.rating)]
-        .map(() =>'<img src="/icons/star-outline.svg" alt="" />')
+        .map(() => '<img src="/icons/star-outline.svg" alt="" />')
         .join("")}</span>
                   <div class="ui divided items">
                 <div class="item">
@@ -57,40 +57,36 @@
           </div>
         `;
 
-
       const deleteForm = document.getElementById("delete-form");
-      deleteForm.addEventListener("submit", function() {
+      deleteForm.addEventListener("submit", function () {
         event.preventDefault();
-        confirm("Are you sure you want to delete the book review");
+        const isConfirmed = confirm(
+          "Are you sure you want to delete the book review"
+        );
 
-
-        if(!confirm) {
+        if (!isConfirmed) {
+          console.log("Book review deletion cancelled.");
           return;
+        } else {
+          fetch(`/api/book/delete/${bookId}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                alert("Book review deleted successfully!");
+                window.location.href = "/book";
+              } else {
+                alert("Failed to delete the book review.");
+              }
+            })
+
+            .catch((error) => {
+              console.error("Error:", error);
+            });
         }
-        fetch(`/api/book/delete/${bookId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Book review deleted successfully!");
-            window.location.href = "/book";
-          } else {
-            alert("Failed to delete the book review.");
-          }
-        })
-      
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-      })
+      });
     });
-
-    
-
- 
-  
-  
 </script>

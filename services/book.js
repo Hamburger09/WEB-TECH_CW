@@ -25,10 +25,22 @@ const bookService = {
     const newBook = req.body;
     newBook.id = generateId(10);
     books.push(newBook);
-    console.log("Adding book", newBook);
     writeToFile(books);
 
     return newBook;
+  },
+
+  // Function to update a book by ID
+  updateBook: (req, res) => {
+    const bookId = req.params.id;
+    const bookIndex = books.findIndex((book) => book.id === bookId);
+    if (bookIndex !== -1) {
+      books[bookIndex] = { ...books[bookIndex], ...req.body };
+      fs.writeFileSync(global.books, JSON.stringify(books, null, 2));
+      return true;
+    } else {
+      return false;
+    }
   },
 
   // Function to delete a book by ID
