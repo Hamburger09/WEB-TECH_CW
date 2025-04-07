@@ -1,13 +1,17 @@
 <%- include("../head.ejs") %>
 <div class="ui container text segment" id="mainIndexPage"></div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const mainIndexPage = document.getElementById("mainIndexPage");
-    const bookId = window.location.pathname.split("/").pop(); // Get the book ID from the URL
-    fetch(`/api/book/${bookId}`)
-      .then((response) => response.json())
-      .then(({ book }) => {
-        mainIndexPage.innerHTML = `
+  const mainIndexPage = document.getElementById("mainIndexPage");
+  const bookId = window.location.pathname.split("/").pop(); // Get the book ID from the URL
+  fetch(`/api/book/${bookId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then(({ book }) => {
+      mainIndexPage.innerHTML = `
           <div class="card">
             <div class="card-body row">
               <h1 class="text-center">${book.title}</h1>
@@ -21,8 +25,8 @@
                 <span>Rating: ${[...Array(book.rating)]
                   .map(() => '<img src="/icons/star-fill.svg" alt="" />')
                   .join("")}${[...Array(5 - book.rating)]
-          .map(() => '<img src="/icons/star-outline.svg" alt="" />')
-          .join("")} </span>
+        .map(() =>'<img src="/icons/star-outline.svg" alt="" />')
+        .join("")}</span>
                   <div class="ui divided items">
                 <div class="item">
                   <div class="content" style="text-align: justify">
@@ -36,7 +40,7 @@
                     <p>${book.review}</p>
                   </div>
                 </div>
-                <a href="/books/edit" class="">
+                <a href="/book/edit/${book.id}" class="">
   
                 <button class="btn btn-warning">Edit Book Review</button>
                  </a>
@@ -54,6 +58,5 @@
             </div>
           </div>
         `;
-      });
-  });
+    });
 </script>

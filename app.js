@@ -20,15 +20,14 @@ app.get("/", (req, res) => {
 });
 
 // Middleware to parse JSON and URL-encoded data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to serve static files
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use("/images", express.static(path.join(__dirname, "public/images")));
+app.use("/favicon", express.static(path.join(__dirname, "public/favicon")));
 app.use("/icons", express.static(path.join(__dirname, "public/icons")));
 app.use("/css", express.static(path.join(__dirname, "public/styles")));
 app.use("/js", express.static(path.join(__dirname, "public/javascripts")));

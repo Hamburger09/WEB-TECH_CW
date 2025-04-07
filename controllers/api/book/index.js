@@ -41,6 +41,25 @@ const bookController = {
       });
     }
   },
+
+  // Function to add a new book
+  addBook: async (req, res) => {
+    // Call the book service to add a new book
+    try {
+      console.log("Adding book", req.body);
+      const newBook = await bookService.addBook(req, res);
+      res.status(201).json({
+        message: "Book added successfully",
+        book: newBook,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: "Error adding book",
+        error: error.message,
+      });
+    }
+  },
+
   // Function to delete a book by ID
   deleteBook: async (req, res) => {
     // Call the book service to delete a book by ID

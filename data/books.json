@@ -1,22 +1,26 @@
 [
-  {
-    "id": 1,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
-    "genre": "Fiction",
-    "published": 1925,
-    "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 4,
-    "review": "A classic novel that explores themes of wealth, love, and the American dream. The characters are well-developed and the writing is beautiful. Highly recommend!"
-  },
-  {
-    "id": 3,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "genre": "Fiction",
-    "published": 1925,
-    "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 5
-  }
+    {
+        "id": "sdfsdf",
+        "title": "The Great Gatsby",
+        "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
+        "summary": "A story about the American dream and the disillusionment that comes with it.",
+        "rating": 4,
+        "review": "A classic novel that explores themes of wealth, love, and the American dream. The characters are well-developed and the writing is beautiful. Highly recommend!"
+    },
+    {
+        "id": "sdfsdfsdfsdfsdffs",
+        "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
+        "title": "The Great Gatsby",
+        "summary": "A story about the American dream and the disillusionment that comes with it.",
+        "review":"It is an awful god terrible movie...",
+        "rating": 5
+    },
+    {
+        "title": "Dilshod else",
+        "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
+        "summary": "A story about the American dream and the disillusionment that comes with it.",
+        "rating": 5,
+        "review": "It is an awful god terrible movie...",
+        "id": "9Ge5WvPHMW"
+    }
 ]

@@ -5,15 +5,15 @@ const bookController = require("../../../controllers/api/book/index.js");
 
 // Route to get all books
 // This route handles GET requests to fetch all books
-router.get("/", (req, res) => {
-  bookController.getBooks(req, res);
-});
+router.get("/", bookController.getBooks);
 
 // Route to get a specific book by ID
 // This route handles GET requests to fetch a specific book by its ID
-router.get("/:id", (req, res) => {
-  bookController.getBookById(req, res);
-});
+router.get("/:id", bookController.getBookById);
+
+// Route to add a new book
+// This route handles POST requests to add a new book
+router.post("/add", bookController.addBook);
 
 // Route to delete a book by ID
 // This route handles DELETE requests to delete a specific book by its ID

@@ -14,7 +14,7 @@ const bookService = {
   },
   // Function to get a book by ID
   getBookById: (req, res) => {
-    const bookId = Number(req.params.id);
+    const bookId = req.params.id;
     const book = books.find((book) => book.id === bookId);
 
     return book;
@@ -25,13 +25,15 @@ const bookService = {
     const newBook = req.body;
     newBook.id = generateId(10);
     books.push(newBook);
-    fs.writeFileSync(global.books, JSON.stringify(books, null, 2));
+    console.log("Adding book", newBook);
+    writeToFile(books);
+
     return newBook;
   },
 
   // Function to delete a book by ID
   deleteBook: (req, res) => {
-    const bookId = Number(req.params.id);
+    const bookId = req.params.id;
     const bookIndex = books.findIndex((book) => book.id === bookId);
     if (bookIndex !== -1) {
       books.splice(bookIndex, 1);
@@ -43,6 +45,18 @@ const bookService = {
   },
 };
 
+// create function for overwriting the db file updated db content
+
+let writeToFile = async (users) => {
+  await fs.writeFileSync(
+    global.books,
+
+    JSON.stringify(users, null, 4),
+
+    "utf8"
+  );
+};
+// Function to generate a random ID of specified length
 const generateId = (length) => {
   let result = "";
   const characters =
