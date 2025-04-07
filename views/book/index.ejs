@@ -30,24 +30,25 @@
                 book.image
               }" class="card-img-top img-fluid" style="max-height: 300px; object-fit: cover;"/>
               <div class="card-body">
-                <div class="card-title">
+                <h4 class="card-title">
                   <a href="/books/${book.id}" class="nav-link">${book.title}</a>
-                </div>
+                </h4>
                 <div class="meta">
-                  <span>Rating: 
-                    ${[...Array(Math.floor(book.rating))]
+                  <h5>Rating: 
+                    ${[...Array(book.rating)]
                       .map(() => '<img src="/icons/star-fill.svg" alt="" />')
                       .join("")}
-                    ${[...Array(5 - Math.floor(book.rating))]
+                    ${[...Array(5 - book.rating)]
                       .map(() => '<img src="/icons/star-outline.svg" alt="" />')
                       .join("")}
-                  </span>
+                  </h5>
                 </div>
                 <div class="description" style="text-align: justify">
+                  <h5>Summary:</h5>
                   <p>${book.summary}...</p>
                 </div>
                 <div class="extra">
-                  <a href="/books/${
+                  <a href="/book/${
                     book.id
                   }" class="btn btn-primary">Book Review</a>
                 </div>

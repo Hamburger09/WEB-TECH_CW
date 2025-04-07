@@ -8,7 +8,7 @@ const homeController = {
       });
     }
   },
-  getBookById: async (req, res) => {
+  details: async (req, res) => {
     try {
       res.render("book/details");
     } catch (error) {

@@ -7,16 +7,8 @@
     "genre": "Fiction",
     "published": 1925,
     "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 4.5
-  },
-  {
-    "id": 2,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "genre": "Fiction",
-    "published": 1925,
-    "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 4.5
+    "rating": 4,
+    "review": "A classic novel that explores themes of wealth, love, and the American dream. The characters are well-developed and the writing is beautiful. Highly recommend!"
   },
   {
     "id": 3,
@@ -25,24 +17,6 @@
     "genre": "Fiction",
     "published": 1925,
     "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 4.5
-  },
-  {
-    "id": 1,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "genre": "Fiction",
-    "published": 1925,
-    "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 4.5
-  },
-  {
-    "id": 1,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "genre": "Fiction",
-    "published": 1925,
-    "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 4.5
+    "rating": 5
   }
 ]

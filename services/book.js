@@ -14,11 +14,9 @@ const bookService = {
   },
   // Function to get a book by ID
   getBookById: (req, res) => {
-    const bookId = req.params.id;
+    const bookId = Number(req.params.id);
     const book = books.find((book) => book.id === bookId);
-    if (!book) {
-      return res.status(404).json({ message: "Book not found" });
-    }
+
     return book;
   },
 
@@ -29,6 +27,19 @@ const bookService = {
     books.push(newBook);
     fs.writeFileSync(global.books, JSON.stringify(books, null, 2));
     return newBook;
+  },
+
+  // Function to delete a book by ID
+  deleteBook: (req, res) => {
+    const bookId = Number(req.params.id);
+    const bookIndex = books.findIndex((book) => book.id === bookId);
+    if (bookIndex !== -1) {
+      books.splice(bookIndex, 1);
+      fs.writeFileSync(global.books, JSON.stringify(books, null, 2));
+      return true;
+    } else {
+      return false;
+    }
   },
 };
 

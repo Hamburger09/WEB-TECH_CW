@@ -1,30 +1,59 @@
 <%- include("../head.ejs") %>
-<div class="ui container text segment" id="mainindexpage">
-  <div class="ui huge header center aligned">sdfsdf</div>
-  <div class="meta">
-    <span>Rating: </span>
-  </div>
-  <div class="ui divider"></div>
-  <div class="ui divider"></div>
-  <div class="ui divided items">
-    <div class="item">
-      <div class="content" style="text-align: justify">
-        <div class="header">Summary:</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="content" style="text-align: justify">
-        <div class="header">Book Review:</div>
-      </div>
-    </div>
-  </div>
-  <a href="/books//edit" class="ui yellow basic button">Edit Book Review</a>
-  <form
-    id="delete"
-    method="POST"
-    action="/books/?_method=DELETE"
-    style="display: inline"
-  >
-    <button class="ui red basic button">Delete</button>
-  </form>
-</div>
+<div class="ui container text segment" id="mainIndexPage"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mainIndexPage = document.getElementById("mainIndexPage");
+    const bookId = window.location.pathname.split("/").pop(); // Get the book ID from the URL
+    fetch(`/api/book/${bookId}`)
+      .then((response) => response.json())
+      .then(({ book }) => {
+        mainIndexPage.innerHTML = `
+          <div class="card">
+            <div class="card-body row">
+              <h1 class="text-center">${book.title}</h1>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="${
+                  book.image
+                }" class="card-img-top img-fluid" style="max-height: 400px; object-fit: contain;"/>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-8 col-lg-9">
+                <span>Rating: ${[...Array(book.rating)]
+                  .map(() => '<img src="/icons/star-fill.svg" alt="" />')
+                  .join("")}${[...Array(5 - book.rating)]
+          .map(() => '<img src="/icons/star-outline.svg" alt="" />')
+          .join("")} </span>
+                  <div class="ui divided items">
+                <div class="item">
+                  <div class="content" style="text-align: justify">
+                    <h3 class="">Summary:</h3>
+                    <p>${book.summary}</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="content" style="text-align: justify">
+                    <h3 class="">Book Review:</h3>
+                    <p>${book.review}</p>
+                  </div>
+                </div>
+                <a href="/books/edit" class="">
+  
+                <button class="btn btn-warning">Edit Book Review</button>
+                 </a>
+                <form
+                  id="delete"
+                  method="POST"
+                  action="/books/?_method=DELETE"
+                  style="display: inline"
+                >
+                  <button class="btn btn-danger">Delete</button>
+                </form>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+        `;
+      });
+  });
+</script>

@@ -8,6 +8,10 @@ router.get("/", (req, res) => {
   bookController.index(req, res);
 });
 
+// Route to get a specific book by ID
+router.get("/:id", (req, res) => {
+  bookController.details(req, res);
+});
 
 
 module.exports = router;
