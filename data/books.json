@@ -16,7 +16,7 @@
     "id": "ZGiEmSOq8h"
   },
   {
-    "title": "Harry Potter",
+    "title": "Harry Potter1",
     "image": "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale,dpr_1.5/jackets/9781408855652.jpg",
     "summary": "A book about Harry Potter",
     "review": "This book is glorious. Recommend.",
@@ -24,15 +24,7 @@
     "id": "rKAdqr7arD"
   },
   {
-    "title": "Dilshod",
-    "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
-    "summary": "A story about the American dream and the disillusionment that comes with it.",
-    "rating": 5,
-    "review": "It is an awful god terrible movie...",
-    "id": "O61SHMSXtU"
-  },
-  {
-    "title": "Deep Work",
+    "title": "Deep Work ",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzSy4dcKHFmQm7zy2rlPV3RoT-Yu1_FvSwit2BMtuDOBwt8drO",
     "summary": "This is a book about Deep Work.",
     "review": "This is a great book. Recommend everyone!",
@@ -46,5 +38,45 @@
     "review": "It the summer holidays and soon Harry Potter wil be starting his fourth year at Hogwarts\nSl\nSchool of Witchcraft and Wizardry. Harry is counting down the days: there are new spells to be\nlearnt, more Quidditch to be played and the Hogwarts castle to continue exploring. But Harry\nneeds to be careful - there are unexpected dangers lurking..\n\n\nI absolutely love the larry Potter books and out of the seven I'd probably say that The Goblet of\nFire is my favourite, and this is mostly down to the creatures and other wizarding students we\nmeet in the novel. As a lover of Hogwarts it's interesting to know what other wizarding schools\nlare like in the world of Harry Potter, and to explore further the seemingly endless list of\ncreatures.\n\n\nI can never find a boring or uninteresting moment in The Goblet of Fire and I never get sick of\nreading it again and again as it's so easy to lose myself in Harry Potter with the astounding\nevents and distinctive characters. I really like how Hermione Granger strives through in this\nbook as not just a clever girl, but as a girl with passion and determination. I like her complex\npersonality: normally she is typecasted into just being ` intelligent, but Hermione is shown with a\nmore girly and emotive side in this book, giving her more depth than just being Harry's clever\nfriend. She is well-rounded and is more accessible as a regular person (though a witch) with\nfeelings and a personality.\n\n\nIn this book we regularly come across Cedric Diggory, a Hufflepuff, who allows us to see the\nHufflepuff house in more depth rather than just briefly touching upon it as it has been in other\nbooks. |like how we can see the fairness Cedric strives to uphold throughout this book. showing\nus the value of Hufflepuffs.\n\n\nAnyone who hasn't read up to The Goblet of Fire should definitely re-think that decision as this\nis the book where it all changes and it 's then impossible to not continue reading the rest of the\nbooks\n\n\nThe Goblet of Fire definitely deserves a 10/10 in my opinion.",
     "rating": 4,
     "id": "8SrhZcyEKS"
+  },
+  {
+    "title": "The world of ice & fire",
+    "image": "https://m.media-amazon.com/images/I/91WN5bkKP9L._AC_UF1000,1000_QL80_.jpg",
+    "summary": "Game of thrones book.",
+    "review": "Great book. Recommend.",
+    "rating": 3,
+    "id": "9dkxdVLFic"
+  },
+  {
+    "title": "Crime and punishment",
+    "image": "https://m.media-amazon.com/images/I/71O2XIytdqL.jpg",
+    "summary": "This book is about crime and punishment.",
+    "review": "Great book!",
+    "rating": 5,
+    "id": "iofjRE1XtZ"
+  },
+  {
+    "title": "48 Laws of Power",
+    "image": "https://images-cdn.ubuy.co.in/66384c080113576ddc783c2d-the-48-laws-of-power-hardcover.jpg",
+    "summary": "Book great.",
+    "review": "Recommend. Good",
+    "rating": 5,
+    "id": "xACshauQw4"
+  },
+  {
+    "title": "Deep Work",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzSy4dcKHFmQm7zy2rlPV3RoT-Yu1_FvSwit2BMtuDOBwt8drO",
+    "summary": "Great book about deep work",
+    "review": "This is a great book. I recommend this book a lot...\n\n\n\n",
+    "rating": 2,
+    "id": "kF9ByXzUoP"
+  },
+  {
+    "title": "War and Peace",
+    "image": "https://m.media-amazon.com/images/I/81oHM-dzefL.jpg",
+    "summary": "This book is a bout war and peace",
+    "review": "Great book. Recommend everyone who wants to learn about war and peace.",
+    "rating": 4,
+    "id": "CsuQB6Yeuu"
   }
 ]

@@ -203,7 +203,8 @@
                   errorDiv.style.display = "block";
                 }
               });
-            } else {
+            } else if (response.ok){
+              alert("Book review updated successfully!");
               // Redirect to the book details page after successful update
               window.location.href = `/book/details/${bookId}`;
             }
@@ -232,9 +233,10 @@
                   errorDiv.style.display = "block";
                 }
               });
-            } else {
+            } else if(response.ok) {
+              alert("Book review added Successfully!")
               // Redirect to the book list page after successful addition
-              window.location.href = "/";
+              window.location.href = "/book";
             }
           })
           .catch((error) => {
