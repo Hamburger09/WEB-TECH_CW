@@ -11,6 +11,11 @@
   <div class="row gy-4" id="mainIndexPage"></div>
 </div>
 
+<footer class="footer container mt-5 mb-5">
+  This web application was created to fulfill Web Technology module’s
+  requirements and does not represent an actual company or service
+</footer>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     fetch("/api/book", {
@@ -31,15 +36,17 @@
               }" class="card-img-top img-fluid" style="height: 300px; object-fit: cover;"/>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/book/details/${book.id}" class="nav-link">${book.title}</a>
+                  <a href="/book/details/${book.id}" class="nav-link">${
+            book.title
+          }</a>
                 </h4>
                 <div class="meta">
                   <h5>Rating: 
                     ${[...Array(Number(book.rating))]
                       .map(() => '<img src="/icons/star-fill.svg" alt="" />')
                       .join("")}${[...Array(5 - book.rating)]
-                      .map(() => '<img src="/icons/star-outline.svg" alt="" />')
-                      .join("")}
+            .map(() => '<img src="/icons/star-outline.svg" alt="" />')
+            .join("")}
                   </h5>
                 </div>
                 <div class="description" style="text-align: justify">
