@@ -17,24 +17,28 @@ The app is built using **Node.js**, **Express**, and **EJS** for the backend and
 
 ---
 
-## 🚀 How to Run the App Locally 
+## 🚀 How to Run the App Locally
 
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Hamburger09/WEB-TECH_CW.git
+   ```
 2. **Go into the folder**
    ```bash
    cd WEB-TECH_CW
+   ```
 3. **Install all the dependencies**
    ```bash
    npm install
+   ```
 4. **Start the server**
    ```bash
    npm start
+   ```
+
 ### Go to <a href="http://localhost:4200">http://localhost:4200</a>
 
-
-## 📦 Dependencies List 
+## 📦 Dependencies List
 
 ### Here are the main dependencies used in this project:
 
@@ -49,10 +53,13 @@ The app is built using **Node.js**, **Express**, and **EJS** for the backend and
     nodemon - dev server auto-reload (for development only)
 
 ## Links
-### Github Repository <a href="https://github.com/Hamburger09/WEB-TECH_CW.git">Book Review App</a>
 
+### Github Repository <a href="https://github.com/Hamburger09/WEB-TECH_CW.git">Book Review App</a>
+### Link to the deployed app using Amazon Web Services <a href="http://16.170.218.177:4200/book">http://16.170.218.177:4200/book</a>
+### Link to the deployed app using Render <a href="https://web-tech-cw-8wqh.onrender.com/book">https://web-tech-cw-8wqh.onrender.com/book</a>
 
 ## Project Structure
+
     /WEB-TECH_CW
         app.js
         controllers/
@@ -98,8 +105,4 @@ The app is built using **Node.js**, **Express**, and **EJS** for the backend and
         package-lock.json
         package.json
         README.md
-        
-
-    
-
 
