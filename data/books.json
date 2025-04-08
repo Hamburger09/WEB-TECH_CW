@@ -1,6 +1,6 @@
 [
   {
-    "title": "Deep Work1",
+    "title": "Deep Work",
     "image": "https://m.media-amazon.com/images/I/81JJ7fyyKyS._AC_UF1000,1000_QL80_.jpg",
     "summary": "Great book",
     "review": "This is a great book. Recommend.",
@@ -22,5 +22,29 @@
     "review": "This book is glorious. Recommend.",
     "rating": 4,
     "id": "rKAdqr7arD"
+  },
+  {
+    "title": "Dilshod",
+    "image": "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
+    "summary": "A story about the American dream and the disillusionment that comes with it.",
+    "rating": 5,
+    "review": "It is an awful god terrible movie...",
+    "id": "O61SHMSXtU"
+  },
+  {
+    "title": "Deep Work",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzSy4dcKHFmQm7zy2rlPV3RoT-Yu1_FvSwit2BMtuDOBwt8drO",
+    "summary": "This is a book about Deep Work.",
+    "review": "This is a great book. Recommend everyone!",
+    "rating": 5,
+    "id": "37uIcZ3f3r"
+  },
+  {
+    "title": "Harry Potter and The Goblet of Fire",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1627044952l/58613424.jpg",
+    "summary": "Harry Potter faces dangerous new chalienges as he returns to Hogwarts and participates in the\nTriwizard Tournament Soon. he will come face to face with an old foe.",
+    "review": "It the summer holidays and soon Harry Potter wil be starting his fourth year at Hogwarts\nSl\nSchool of Witchcraft and Wizardry. Harry is counting down the days: there are new spells to be\nlearnt, more Quidditch to be played and the Hogwarts castle to continue exploring. But Harry\nneeds to be careful - there are unexpected dangers lurking..\n\n\nI absolutely love the larry Potter books and out of the seven I'd probably say that The Goblet of\nFire is my favourite, and this is mostly down to the creatures and other wizarding students we\nmeet in the novel. As a lover of Hogwarts it's interesting to know what other wizarding schools\nlare like in the world of Harry Potter, and to explore further the seemingly endless list of\ncreatures.\n\n\nI can never find a boring or uninteresting moment in The Goblet of Fire and I never get sick of\nreading it again and again as it's so easy to lose myself in Harry Potter with the astounding\nevents and distinctive characters. I really like how Hermione Granger strives through in this\nbook as not just a clever girl, but as a girl with passion and determination. I like her complex\npersonality: normally she is typecasted into just being ` intelligent, but Hermione is shown with a\nmore girly and emotive side in this book, giving her more depth than just being Harry's clever\nfriend. She is well-rounded and is more accessible as a regular person (though a witch) with\nfeelings and a personality.\n\n\nIn this book we regularly come across Cedric Diggory, a Hufflepuff, who allows us to see the\nHufflepuff house in more depth rather than just briefly touching upon it as it has been in other\nbooks. |like how we can see the fairness Cedric strives to uphold throughout this book. showing\nus the value of Hufflepuffs.\n\n\nAnyone who hasn't read up to The Goblet of Fire should definitely re-think that decision as this\nis the book where it all changes and it 's then impossible to not continue reading the rest of the\nbooks\n\n\nThe Goblet of Fire definitely deserves a 10/10 in my opinion.",
+    "rating": 4,
+    "id": "8SrhZcyEKS"
   }
 ]

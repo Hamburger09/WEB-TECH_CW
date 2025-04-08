@@ -22,7 +22,8 @@
               </div>
 
               <div class="col-12 col-sm-6 col-md-8 col-lg-9">
-                <span>Rating: ${[...Array(book.rating)]
+                <span class="h4">Rating:</span>
+                <span> ${[...Array(book.rating)]
                   .map(() => '<img src="/icons/star-fill.svg" alt="" />')
                   .join("")}${[...Array(5 - book.rating)]
         .map(() => '<img src="/icons/star-outline.svg" alt="" />')
