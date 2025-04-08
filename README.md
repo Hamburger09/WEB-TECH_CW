@@ -17,7 +17,7 @@ The app is built using **Node.js**, **Express**, and **EJS** for the backend and
 
 ---
 
-## 🚀 How to Run the App Locally (2 marks)
+## 🚀 How to Run the App Locally 
 
 1. **Clone the Repository**
    ```bash
